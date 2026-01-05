@@ -1,0 +1,412 @@
+<!DOCTYPE html> <!-- Menentukan tipe dokumen HTML5 -->
+<html lang="id"> <!-- Tag utama HTML, bahasa dokumen Indonesia -->            
+<head> <!-- Bagian kepala, berisi metadata dan CSS -->
+  <meta charset="utf-8"> <!-- Mengatur encoding karakter ke UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Agar tampilan responsif di perangkat mobile -->
+  <title>Iffa Witriani</title> <!-- Judul tab browser -->
+
+<!-- CSS Internal -->
+  <style> /* Mulai penulisan CSS internal */
+    @keyframes gradientMove { /* Animasi gradasi background */
+      0% { background-position: 0% 50%; } /* Awal posisi background */
+      50% { background-position: 100% 50%; } /* Tengah posisi background */
+      100% { background-position: 0% 50%; } /* Kembali ke awal posisi */
+    }
+    body { /* Styling untuk body utama */
+      margin: 0; /* Hilangkan margin default */
+      height: 100vh; /* Tinggi layar penuh */
+      background: linear-gradient(-45deg, #3edbf0, #fdffff, #2bc0e4, #f9f9f9); /* Background gradasi */
+      background-size: 480% 480%; /* Perbesar area gradasi */
+      animation: gradientMove 15s ease infinite; /* Animasi gerakan gradasi */
+    }
+    
+    
+    body#home { /* Styling untuk body dengan id home */
+      margin: 0; /* Hilangkan margin default */
+      font-family: 'Trebuchet MS', 'Gill Sans', 'Segoe UI', Arial, sans-serif; /* Font utama */
+      color: #0f172a; /* Warna teks utama */
+      
+    }
+
+    /* NAVBAR */
+    header { /* Styling header */
+      position: sticky; /* Tetap menempel di atas saat scroll */
+      top: 0; /* Posisi di bagian atas */
+      z-index: 999; /* Prioritas tinggi agar di atas elemen lain */
+      backdrop-filter: blur(8px); /* Efek blur transparan */
+      background: rgba(255, 255, 255, 0.7); /* Background putih transparan */
+      border-bottom: 1px solid rgba(15,23,42,0.08); /* Garis bawah tipis */
+    }
+    header .container { /* Container dalam header */
+      max-width: 1100px; /* Lebar maksimal container */
+      margin: 0 auto; /* Rata tengah */
+      padding: 14px 18px; /* Padding dalam */
+      display: flex; /* Flexbox */
+      align-items: center; /* Posisi vertikal tengah */
+      justify-content: space-between; /* Jarak antar elemen kiri-kanan */
+    }
+    header .brand { /* Area branding */
+      display: flex; /* Flexbox */
+      align-items: center; /* Tengah secara vertikal */
+      gap: 10px; /* Jarak antar elemen */
+    }
+    header img.logo { /* Logo */
+      width: 36px; /* Lebar logo */
+      height: 36px; /* Tinggi logo */
+      border-radius: 10px; /* Sudut membulat */
+      object-fit: cover; /* Gambar menyesuaikan kotak */
+      animation: bounce 2s infinite; /* Animasi bounce */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25); /* Bayangan logo */
+    }
+    header .brand span { /* Nama brand */
+      font-weight: 700; /* Tebal */
+      letter-spacing: 0.5px; /* Spasi antar huruf */
+      font-size: 18px; /* Ukuran font */
+    }
+    header nav { /* Navigasi */
+      display: flex; /* Flexbox */
+      gap: 10px; /* Jarak antar link */
+    }
+    header nav a { /* Link navigasi */
+      text-decoration: none; /* Hilangkan garis bawah */
+      padding: 10px 14px; /* Padding */
+      border-radius: 999px; /* Bentuk kapsul */
+      border: 1px solid rgba(15,23,42,0.1); /* Border tipis */
+      background: #ffffff; /* Background putih */
+      color: #0f172a; /* Warna teks */
+      font-weight: 600; /* Tebal sedang */
+      font-size: 14px; /* Ukuran font */
+      transition: transform .15s ease, box-shadow .2s; /* Efek hover */
+      box-shadow: 0 2px 8px rgba(15,23,42,0.06); /* Bayangan kecil */
+    }
+
+    /* HERO */
+    .hero { /* Bagian hero */
+      max-width: 1100px; /* Lebar maksimum */
+      margin: 0 auto; /* Rata tengah */
+      padding: 48px 18px 30px; /* Padding */
+      display: flex; /* Flexbox */
+      gap: 28px; /* Jarak antar elemen */
+      align-items: center; /* Tengah vertikal */
+      flex-wrap: wrap; /* Agar rapi di layar kecil */
+    }
+    .hero figure { /* Foto profil */
+      width: 260px; /* Lebar kotak foto */
+      height: 320px; /* Tinggi kotak foto */
+      margin: 0; /* Hilangkan margin */
+      border-radius: 22px; /* Membulatkan sudut */
+      overflow: hidden; /* Potong gambar keluar frame */
+      border: 1px solid rgba(15,23,42,0.1); /* Border tipis */
+      box-shadow: 0 15px 45px rgba(2,6,23,0.12), inset 0 0 0 8px rgba(56,189,248,0.15); /* Bayangan luar & dalam */
+      background: linear-gradient(180deg,#fff, #f1f5f9); /* Background gradasi */
+      display: flex; /* Flexbox */
+      align-items: center; /* Tengah vertikal */
+      justify-content: center; /* Tengah horizontal */
+    }
+    .hero figure img { /* Foto dalam figure */
+      width: 100%; /* Lebar penuh */
+      height: 100%; /* Tinggi penuh */
+      object-fit: cover; /* Menyesuaikan frame */
+    }
+    .hero .intro { /* Intro teks */
+      flex: 2 1 360px; /* Fleksibel */
+    }
+    .hero .intro .tag { /* Tag halo */
+      display: inline-block; /* Tampil blok dalam baris */
+      padding: 6px 12px; /* Padding */
+      border-radius: 999px; /* Bentuk kapsul */
+      border: 1px solid rgba(2,6,23,0.08); /* Border tipis */
+      background: #ffffff; /* Background putih */
+      font-size: 12px; /* Ukuran font */
+      font-weight: 700; /* Tebal */
+      letter-spacing: 1px; /* Spasi huruf */
+      text-transform: uppercase; /* Huruf kapital */
+      margin: 0 0 12px 0; /* Margin bawah */
+    }
+    .hero .intro h1 { /* Judul nama */
+      margin: 0 0 8px 0; /* Margin bawah */
+      font-size: 38px; /* Ukuran besar */
+      line-height: 1.15; /* Tinggi baris */
+      letter-spacing: 0.4px; /* Spasi huruf */
+    }
+    .hero .intro h1 span { /* Nama gradasi */
+      background: linear-gradient(135deg,#013172,#4a78ee,#66a7f7); /* Gradasi teks */
+      -webkit-background-clip: text; /* Klip background ke teks */
+      background-clip: text; /* Klip background ke teks */
+      color: transparent; /* Biar warna asli hilang */
+    }
+    .hero .intro p { /* Deskripsi singkat */
+      margin: 0 0 18px 0; /* Margin bawah */
+      font-size: 18px; /* Ukuran font */
+      color: #334155; /* Warna teks */
+      max-width: 60ch; /* Batas panjang teks */
+    }
+    .hero .intro .social { /* Ikon sosial */
+      display: flex; /* Flexbox */
+      gap: 12px; /* Jarak antar ikon */
+      align-items: center; /* Tengah vertikal */
+    }
+    .hero .intro .social a img { /* Ikon sosial */
+      width: 30px; /* Lebar ikon */
+      height: 30px; /* Tinggi ikon */
+      vertical-align: middle; /* Posisi tengah */
+    }
+
+    /* ABOUT */
+    #about { /* Bagian tentang saya */
+      max-width: 1100px; /* Lebar maksimum */
+      margin: 0 auto; /* Tengah */
+      padding: 26px 18px 8px; /* Padding */
+    }
+    #about .card { /* Card tentang saya */
+      border-radius: 18px; /* Sudut membulat */
+      background: rgba(255,255,255,0.8); /* Background transparan */
+      border: 1px solid rgba(15,23,42,0.08); /* Border tipis */
+      box-shadow: 0 12px 28px rgba(2,6,23,0.08); /* Bayangan */
+      padding: 22px; /* Padding isi */
+    }
+    #about h2 { /* Judul about */
+      margin: 0 0 8px 0; /* Margin bawah */
+      font-size: 26px; /* Ukuran font */
+    }
+    #about p { /* Isi teks */
+      margin: 0; /* Hilangkan margin */
+      color: #334155; /* Warna teks */
+      line-height: 1.7; /* Jarak antar baris */
+    } 
+
+    /* BIODATA */
+    .biodata { /* Bagian biodata */
+      max-width: 1100px; /* Lebar maksimal */
+      margin: 20px auto; /* Margin atas bawah 20px, kiri kanan auto */
+      padding: 26px 18px; /* Padding */
+    }
+    .biodata h2 { /* Judul biodata */
+      margin: 0 0 12px 0; /* Margin bawah */
+      font-size: 26px; /* Ukuran font */
+    }
+    .biodata table { /* Tabel biodata */
+      width: 100%; /* Lebar penuh */
+      border-collapse: collapse; /* Hilangkan jarak antar sel */
+      font-size: 16px; /* Ukuran font */
+      background: #ffffff; /* Background putih */
+      box-shadow: 0 8px 20px rgba(2,6,23,0.08); /* Bayangan */
+      border-radius: 12px; /* Sudut membulat */
+      overflow: hidden; /* Sembunyikan bagian lebih */
+      border: 2px solid #64748b; /* Border biru */
+    }
+    .biodata th, .biodata td { /* Sel tabel */
+      padding: 12px; /* Padding */
+      border: 2px solid #64748b; /* Border antar sel */
+      text-align: left; /* Rata kiri */
+    }
+    .biodata tr:nth-child(1) { /* Baris pertama */
+      background: #38bdf8; /* Warna biru */
+      color: #fff; /* Teks putih */
+    }
+    .biodata tr:nth-child(2) { background: #f1f5f9; } /* Baris kedua abu */
+    .biodata tr:nth-child(3) { background: #e0f2fe; } /* Baris ketiga biru muda */
+    .biodata tr:nth-child(4) { background: #f1f5f9; } /* Baris keempat abu */
+
+    /* PROJECTS */
+    #projects { /* Bagian proyek */
+      max-width: 1100px; /* Lebar maksimal */
+      margin: 0 auto; /* Tengah */
+      padding: 24px 18px 8px; /* Padding */
+    }
+    #projects h2 { /* Judul proyek */
+      margin: 0 0 12px 0; /* Margin bawah */
+      font-size: 26px; /* Ukuran font */
+    }
+    #projects .grid { /* Grid proyek */
+      display: grid; /* Layout grid */
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Kolom fleksibel */
+      gap: 16px; /* Jarak antar kartu */
+    }
+    #projects .card { /* Kartu proyek */
+      text-decoration: none; /* Hilangkan underline */
+      color: inherit; /* Warna teks ikuti induk */
+      border-radius: 18px; /* Sudut membulat */
+      overflow: hidden; /* Sembunyikan isi keluar */
+      background: #ffffff; /* Background putih */
+      border: 1px solid rgba(15,23,42,0.08); /* Border tipis */
+      box-shadow: 0 10px 24px rgba(2,6,23,0.08); /* Bayangan */
+      display: block; /* Blok */
+      transition: transform .15s ease; /* Efek hover */
+    }
+    #projects .card img { /* Gambar proyek */
+      width: 100%; /* Lebar penuh */
+      height: 100%; /* Tinggi penuh */
+      object-fit: cover; /* Sesuaikan */
+    }
+    #projects .card .content { /* Isi kartu */
+      padding: 14px; /* Padding */
+    }
+    #projects .card h3 { /* Judul kartu */
+      margin: 0 0 6px 0; /* Margin bawah */
+      font-size: 18px; /* Ukuran font */
+    }
+    #projects .card p { /* Deskripsi kartu */
+      margin: 0; /* Hilangkan margin */
+      color: #475569; /* Warna abu */
+      font-size: 14px; /* Ukuran font */
+    }
+
+    /* ACHIEVEMENTS */
+    #achievements { /* Bagian pencapaian */
+      max-width: 1100px; /* Lebar maksimal */
+      margin: 0 auto; /* Tengah */
+      padding: 26px 18px; /* Padding */
+    }
+    #achievements h2 { /* Judul pencapaian */
+      margin: 0 0 20px 0; /* Margin bawah */
+      font-size: 26px; /* Ukuran font */
+      color: #000000; /* Warna hitam */
+      
+    }
+    #achievements ul { /* List pencapaian */
+      list-style-type: disc; /* Bullet list */
+      padding-left: 20px; /* Indentasi */
+      margin: 0; /* Hilangkan margin */
+      font-size: 16px; /* Ukuran font */
+      line-height: 1.8; /* Jarak baris */
+      color: #475569; /* Warna abu */
+      font-weight: 500; /* Tebal sedang */
+    }
+    #achievements li { margin-bottom: 8px; } /* Jarak antar item */
+
+    /* FOOTER */
+    footer { /* Bagian footer */
+      border-top: 1px solid rgba(15,23,42,0.08); /* Garis atas tipis */
+      background: #ffffff; /* Background putih */
+    }
+    footer .container { /* Isi footer */
+      max-width: 1100px; /* Lebar maksimal */
+      margin: 0 auto; /* Tengah */
+      padding: 18px; /* Padding */
+      display: flex; /* Flexbox */
+      justify-content: space-between; /* Spasi antar elemen */
+      gap: 12px; /* Jarak antar item */
+      flex-wrap: wrap; /* Bungkus di layar kecil */
+      color: #475569; /* Warna teks */
+      font-size: 14px; /* Ukuran font */
+    }
+  </style>
+</head>
+
+<body id="home"> <!-- Mulai body dengan id home -->
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="container">
+      <div class="brand">
+        <img src="ifaa pake pdh pixel ver.png" alt="Foto Profil" class="logo"> <!-- Logo profil -->
+        <span>Iffa Witriani</span> <!-- Nama brand -->
+      </div>
+      <nav>
+        <a href="#home">Home</a> <!-- Link ke home -->
+        <a href="#about">About</a> <!-- Link ke about -->
+        <a href="#projects">Projects</a> <!-- Link ke projects -->
+       
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div style="flex: 1 1 280px; display:flex; justify-content:center;"> <!-- Kontainer foto -->
+      <figure>
+        <img src="iffa witriani.png" alt="Foto Profil"> <!-- Foto profil utama -->
+      </figure>
+    </div>
+    <div class="intro"> <!-- Bagian teks intro -->
+      <p class="tag">Halo! 👋</p>
+      <h1>Saya <span>Iffa Witriani</span></h1>
+      <p>Seorang pelajar yang suka akan mencoba hal baru.
+        Saya tertarik pada <b>Editing video</b>, <b>Fotografik</b>, dan <b>pembelajaran teknologi</b>. Senang berkolaborasi
+        dalam proyek kreatif dan open source.
+      </p>
+      <div class="social"> <!-- Ikon sosial media -->
+        <a href="https://www.instagram.com/ffaniily?igsh=OTB3djY2YnFkZXI1" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png"></a>
+        <a href="mailto:ifaawitriani20@gmail.com"><img src="download gmail.PNG"></a>
+        <a href="https://www.linkedin.com/in/iffa-witriani-970999315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/6422/6422202.png"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="card">
+      <h2>Tentang Saya</h2>
+      <p>Saya seorang pelajar SMA kelas 3 yang concern di bidang <b>Sosiology</b> dan <b>Matematika</b> memiliki rasa ingin tahu tinggi dan semangat untuk mencoba hal-hal baru. Ketertarikan saya terutama ada di bidang teknologi, di mana saya senang mengeksplorasi perkembangan serta peluang yang ada di dalamnya.
+      Selain itu, saya juga memiliki bakat dalam dance modern yang menjadi salah satu cara saya mengekspresikan diri. 
+      Saya menguasai beberapa bahasa asing, yang membantu saya untuk lebih terbuka dalam berkomunikasi dengan orang dari berbagai latar belakang.</p>
+    </div>
+  </section>
+
+  <!-- BIODATA -->
+  <section class="biodata">
+    <h2>Biodata Diri</h2>
+    <table>
+      <tr><th>Nama</th><td>Iffa Witriani</td></tr>
+      <tr><th>Tempat, Tanggal Lahir</th><td>Bandar Lampung, 20 November 2007</td></tr>
+      <tr><th>Alamat</th><td>Putak Baru, PT Gunung Madu Plantation</td></tr>
+      <tr><th>Hobi</th><td>Dance Modern, Fotografi, Editing Video</td></tr>
+    </table>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <a class="card" href="https://drive.google.com/drive/folders/1b1xhKI-GS8m17crtq2-AWytypbFlyf-U?usp=sharing" target="_blank">
+        <div style="height:160px; overflow:hidden;">
+          <img src="POSTER MOTIVASI FOR OSIS.png" alt="Poster Editing">
+        </div>
+        <div class="content">
+          <h3>Poster</h3>
+          <p>Kumpulan poster digital</p>
+        </div>
+      </a>
+      <a class="card" href="https://drive.google.com/drive/folders/1z7yXo-1nokFxAulBbBf3AVO5SG5j0YO0?usp=sharing" target="_blank">
+        <div style="height:160px; overflow:hidden;">
+          <img src="candi prambanan.jpg" alt="Photography">
+        </div>
+        <div class="content">
+          <h3>Galeri Foto</h3>
+          <p>Hasil eksplorasi fotografi dengan tema alam & urban.</p>
+        </div>
+      </a>
+      <a class="card" href="https://drive.google.com/drive/folders/1JHs8LP7DWEzobFATMyZhskJHyVODS8u-?usp=sharing" target="_blank">
+        <div style="height:160px; overflow:hidden;">
+          <img src="Hasil Karya ifaa.jpg" alt="Achievement">
+        </div>
+        <div class="content">
+          <h3>Galery karya</h3>
+          <p>Kumpulan karya saya</p>
+        </div>
+      </a>
+    </div>
+  </section
+  <!-- ACHIEVEMENTS --> <!-- Bagian pencapaian -->
+  <section id="achievements"> <!-- Membuat section dengan id "achievements" -->
+    <h2>Pencapaian</h2> <!-- Judul bagian pencapaian -->
+    <ul> <!-- Membuat daftar tidak berurutan -->
+      <li>Lolos proposal OPSI (SMA)</li> <!-- Item daftar pencapaian -->
+      <li>Menjadi peserta Olimpiade Physics (SMA)</li> <!-- Item daftar pencapaian -->
+      <li>Menjadi peserta modern dance di ajang Lampung Student Olympic (SMA)</li> <!-- Item daftar pencapaian -->
+      <li>Menjadi peserta lomba senam pramuka tingkat Kabupaten (SMA)</li> <!-- Item daftar pencapaian -->
+      <li>Menjadi bagian secretary OSIS pada periode 2023/2024 (SMA)</li> <!-- Item daftar pencapaian -->
+      <li>Menerbitkan buku analog puisi (SMP)</li> <!-- Item daftar pencapaian -->
+    </ul> <!-- Penutup daftar -->
+  </section> <!-- Penutup section pencapaian -->
+
+  <!-- FOOTER --> <!-- Bagian footer -->
+  <footer> <!-- Elemen footer -->
+    <div class="container"> <!-- Membungkus konten footer dalam container -->
+      <span>© <span id="year">2025</span> • Iffa Witriani</span> <!-- Menampilkan tahun & nama -->
+      
+    </div> <!-- Penutup container -->
+  </footer> <!-- Penutup footer -->
+</body> <!-- Penutup body -->
+</html> <!-- Penutup dokumen HTML -->
